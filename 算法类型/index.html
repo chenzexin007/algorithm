@@ -8,6 +8,22 @@
   <script src="./01-选择排序/index.js"></script>
   <script src="./02-冒泡排序/index.js"></script>
   <script>
+    // function selectSort(arr){
+    //   for(let i=0; i<arr.length-1; i++){
+    //     let minIndex = i
+    //     for(let j=i+1; j<arr.length; j++ ){
+    //       minIndex = arr[minIndex] > arr[j] ? j : minIndex
+    //     }
+    //     if(minIndex != i){
+    //       swap(arr, minIndex, i)
+    //     }
+    //   }
+    // }
+    // function swap(arr, minIndex, i){
+    //   let tem = arr[i]
+    //   arr[i] = arr[minIndex]
+    //   arr[minIndex] = tem
+    // }
     // 选择排序
     function testSelect(){
       var arr = [4,2,6,7,1]
@@ -15,6 +31,18 @@
       console.log('选择排序: ', arr)    
     }
     testSelect()
+
+    // function bubbling(arr){
+    //   for(let i=0; i<arr.length-1; i++){
+    //     for(let j=0; j<arr.length-i-1; j++){
+    //       if(arr[j]>arr[j+1]){
+    //         var tem = arr[j]
+    //         arr[j] = arr[j+1]
+    //         arr[j+1] = tem
+    //       }
+    //     }
+    //   }
+    // }
     // 冒泡排序
     function testBub(){
       var arr = [4,2,6,7,1]

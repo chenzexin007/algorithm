@@ -3,7 +3,7 @@ function bubbling(arr){
     return
   }
   for(let i=0; i<arr.length-1; i++){
-    for(let j=0; j<arr.length-i; j++){
+    for(let j=0; j<arr.length-i-1; j++){
       if(arr[j] > arr[j+1]){
         let tem = arr[j]
         arr[j] = arr[j+1]
