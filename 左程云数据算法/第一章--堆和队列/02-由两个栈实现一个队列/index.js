@@ -15,12 +15,11 @@ function poll(){
   }
   return value
 }
-// 获取队列第几个元素，不影响队列，找不到返回null
-
-function pee(index){
+// 获取队列第一个元素，不影响队列，找不到返回null
+function pee(){
   var value = null
-  if(reverseStack.length-1 >= index){
-    value = normalStack[index]
+  if(reverseStack.length > 0){
+    value = normalStack[0]
   }
   return value
 }
