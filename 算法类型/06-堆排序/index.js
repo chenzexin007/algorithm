@@ -9,13 +9,13 @@
 
 function heapSort(arr){
   if(arr == null || arr.length <2){
-    return arr
+    return
   }
-  var heapSize = arr.length
   for(let i=0; i<arr.length; i++){
     // 形成大根堆
     heapInsert(arr,i)
   }
+  var heapSize = arr.length
   swap(arr, 0, --heapSize)
   while(heapSize > 0){
     heapify(arr, 0, heapSize)
@@ -25,9 +25,9 @@ function heapSort(arr){
 
 // 向上形成大根堆
 function heapInsert(arr, index){
-  if(index == 0){
-    return 
-  }
+  // if(index == 0){
+  //   return 
+  // }
   while(arr[index] > arr[(index-1)/2]){
     swap(arr, index, (index-1)/2)
     index = (index-1)/2

@@ -19,3 +19,4 @@ function swap(arr, i, minIndex){
   arr[i] = arr[minIndex]
   arr[minIndex] = temp
 }
+
