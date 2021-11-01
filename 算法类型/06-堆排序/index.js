@@ -15,21 +15,29 @@ function heapSort(arr){
     // 形成大根堆
     heapInsert(arr,i)
   }
+  /**
+   * 如果是用户直接给所有数据，并且只需要得到大根堆
+   * 那我们只需要使用heapify就行了，通过计算可以得到时间复杂度是o(N)
+   *   for(let i=arr.length; i>0; i--){
+        heapify(arr, i, arr.length)
+      }
+   */
+
   var heapSize = arr.length
   swap(arr, 0, --heapSize)
   while(heapSize > 0){
     heapify(arr, 0, heapSize)
     swap(arr, 0, --heapSize)
   }
-}
+} 
 
 // 向上形成大根堆
 function heapInsert(arr, index){
   // if(index == 0){
   //   return 
   // }
-  while(arr[index] > arr[(index-1)/2]){
-    swap(arr, index, (index-1)/2)
+  while(arr[index] > arr[parseInt((index-1)/2)]){
+    swap(arr, index, parseInt((index-1)/2))
     index = (index-1)/2
   }
 }
