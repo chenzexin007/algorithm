@@ -31,10 +31,10 @@ function toMerge(arr, L, M, R){
     catchArr[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++]
   }
   if(p1 <= M){
-    catchArr.push(...arr.slice(p1, M+1))
+    catchArr.push(...arr.slice(p1, M+1)) // 错误写法， p1一直不变，死循环
   }
   if(p2 <= R){
-    catchArr.push(...arr.slice(p2, R+1))
+    catchArr.push(...arr.slice(p2, R+1))  // 错误写法， p2一直不变，死循环
   }
   // while(p1 <= M){
   //   catchArr[i++] = arr[p1++]
