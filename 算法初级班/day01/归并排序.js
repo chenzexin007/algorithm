@@ -2,7 +2,7 @@
  * @Description: 
  * @Date: 2022-04-23 18:58:28
  * @LastEditors: 陈泽鑫
- * @LastEditTime: 2022-04-23 20:12:17
+ * @LastEditTime: 2022-05-10 21:00:33
  * @FilePath: \algorithm\算法初级班\day01\归并排序.js
  */
 // 时间复杂度： O(N*logN), 认识master公式， 因为外排比较了n次，所以d是1
