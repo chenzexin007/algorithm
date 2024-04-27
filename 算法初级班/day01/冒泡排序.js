@@ -6,14 +6,16 @@
  * @FilePath: \algorithm\算法初级班\day01\冒泡排序.js
  */
 // 时间复杂度： O(N^2)
-function sortProcess (arr) {
+
+function sortProcess02 (arr) {
   if (arr.length <= 1) return arr
-  for (let i=0; i<arr.length-1; i++) {   // 只要比n-1次就出结果
-    for (let j=0; j<arr.length-i-1; j++) {
-      if (arr[j] > arr[j+1]){
-        let tem = arr[j]; 
-        arr[j] = arr[j+1];
-        arr[j+1] = tem;
+  let len = arr.length
+  for (let i = len - 1; i > 0; i--) {
+    for (let j = 0; j < i; j ++) {
+      if (arr[j] > arr[j + 1]) {
+        let min = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = min
       }
     }
   }
