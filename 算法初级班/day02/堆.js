@@ -17,9 +17,9 @@
  * index 位置并入这棵树，通过heapInsert向上比较替换，形成新的大根堆
  */
 function heapInsert (arr, index) {
-  while (arr[index] > arr[index-1/2]) {
-    swap(arr, index, (index-1)/2)
-    index = (index-1)/2
+  while (arr[index] > arr[(index - 1) / 2]) {
+    swap(arr, index, (index - 1) / 2)
+    index = (index - 1) / 2 
   }
 }
 
@@ -30,19 +30,15 @@ function heapInsert (arr, index) {
  * arr[0, heapsize]   是一颗排好的大根堆树, 但index位置的数突然别换小了，所以需要向下heapify形成新的大根堆
  * heapsize 已排成大根堆区域的越界阀门
  */
-function heapify (arr, index, heapsize) {
-  let left = 2*index + 1
+function heapify02 (arr, index, heapsize) {
+  let left = index * 2 + 1
   while (left < heapsize) {
-    let lastTarget = left + 1 < heapInsert && arr[left+1] > arr[left]
-      ? left+1
-      : left
+    let lastTarget = left + 1 < heapsize && arr[left + 1] > arr[left] ? left + 1 : left
     lastTarget = arr[index] >= arr[lastTarget] ? index : lastTarget
-    if (lastTarget === index) {
-      break
-    }
-    swap(arr, index, lastTarget)
+    if (lastTarget === index) break
+    swap(arr, lastTarget, index)
     index = lastTarget
-    left = 2*index + 1
+    left = index * 2 + 1
   }
 }
 

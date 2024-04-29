@@ -28,6 +28,7 @@
 function sortProcess (arr, L, R) {
   if (L < R) {
     // 加上这句就是随机快排
+    // 快排3.0，随机快排，最后的一位比较数为随机一位，这样求数学期望复杂度就是O(N*logN)
     // swap(arr, L + Math.floor(Math.random() * (R-L+1)), R)
     const p = partiction(arr, L, R)
     sortProcess(arr, L, p[0]-1)
@@ -49,6 +50,25 @@ function partiction (arr, L, R) {
   }
   swap(arr, more, R)
   return [less+1, more]
+}
+
+/**
+ * 快排2.0； arr， num中 小于num的在左边，等于num的在中间, 大于num的在右边
+ */
+function partiction02 (arr, L, R) {
+  let less = L - 1
+  let more = R
+  while (L < more) {
+    if (arr[L] < arr[R]) {
+      swap(arr, ++less, L++)
+    } else if (arr[L] > arr[R]) {
+      swap(arr, L, --more)
+    } else {
+      L++
+    }
+  }
+  swap(arr, more, R)
+  return [less + 1, more]
 }
 
 function swap (arr, L, R) {
